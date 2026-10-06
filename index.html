@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Édes Piros cukrászda – Halásztelek</title>
+<meta name="description" content="Édes Piros cukrászda Halásztelken: francia sütemények, mousse-ok, újragondolt klasszikusok. Laktóz-, cukor- és hozzáadott búzaliszt mentes változatokkal. Rendelj online, vedd át személyesen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yellowtail&family=Josefin+Sans:wght@400;600;700&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="demo-bar">Bemutató webshop – a rendelés és a fizetés csak teszt, valódi tranzakció nem történik.</div>
+
+<header class="site-header">
+  <a href="#" class="logo"><img src="images/logo.png" alt="Édes Piros Desszertvilág"></a>
+  <nav>
+    <a href="#termekek">Süteményeink</a>
+    <a href="#rolunk">Rólunk</a>
+    <a href="#elerhetoseg">Elérhetőség</a>
+  </nav>
+  <button class="cart-btn" id="openCart" aria-label="Kosár megnyitása">
+    Kosár <span id="cartCount">0</span>
+  </button>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Cukrászda · Halásztelek</p>
+      <h1>Íz, minőség<br>és <em>harmónia</em></h1>
+      <p class="lead">Francia sütemény-különlegességek, mennyei mousse-ok és a hagyományos ízek újragondolt változatai – izgalmas, egyedi ízvilággal.</p>
+      <div class="hero-actions">
+        <a href="#termekek" class="btn">Rendelek</a>
+        <a href="#rolunk" class="btn btn-ghost">Ismerj meg minket</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <span class="leaf l1"></span><span class="leaf l2"></span><span class="leaf l3"></span>
+      <div class="ring"><img src="images/tripla-csokolade.png" alt="Tripla csokoládé torta szelet"></div>
+      <img class="sticker" src="images/logo.png" alt="">
+    </div>
+  </section>
+
+  <section class="strip">
+    <div><strong>Dining Guide TOP10</strong><span>vidéki cukrászdák között 2019-ben és 2021-ben</span></div>
+    <div><strong>3 nap</strong><span>elkészítési idő, személyes átvétel</span></div>
+    <div><strong>Érzékeny ízlésűeknek is</strong><span>laktóz-, cukor-, hozzáadott búzaliszt mentes változatok</span></div>
+  </section>
+
+  <section id="termekek" class="section">
+    <h2>Süteményeink <em>kínálata</em></h2>
+    <p class="section-lead">Válassz 12 vagy 24 szeletes tálcát – összeállítva, átvételre készen.</p>
+    <div class="grid" id="products"></div>
+  </section>
+
+  <section id="rolunk" class="section about">
+    <div class="about-text">
+      <h2>Ez az Édes Piros <em>ízgarancia</em></h2>
+      <p>Desszertjeinkkel 2019-ben és 2021-ben is bekerültünk a Dining Guide vidéki TOP10 cukrászdái közé – ha kíváncsi vagy, milyen egy díjnyertes sütemény, látogass meg minket!</p>
+      <p>A tudatos táplálkozást kedvelőknek, ételallergiásoknak és cukorbetegeknek sem kell lemondaniuk a finomságokról: süteményeink laktóz-, cukor- és hozzáadott búzaliszt mentes változatokban is kaphatók.</p>
+      <p class="quote">Térj be hozzánk, és vigyél el egy felejthetetlenül édes pillanatot.</p>
+    </div>
+    <div class="about-img"><img src="images/hazi-kremes.png" alt="Házi krémes vaníliás krémmel"></div>
+  </section>
+
+  <section id="elerhetoseg" class="section contact">
+    <h2>Elérhetőség</h2>
+    <div class="contact-grid">
+      <div>
+        <h3>Címünk</h3>
+        <p>2314 Halásztelek,<br>Nap utca 10.</p>
+        <p class="muted">Itt veheted át a megrendelt desszerteket.</p>
+      </div>
+      <div>
+        <h3>Nyitvatartás</h3>
+        <p>Hétfő: zárva<br>Kedd–Szombat: 10:00–19:00<br>Vasárnap: 10:00–18:00</p>
+      </div>
+      <div>
+        <h3>Kapcsolat</h3>
+        <p><a href="tel:06709075447">06 70 907 5447</a><br><a href="mailto:info@edespiros.hu">info@edespiros.hu</a></p>
+        <p class="muted">Telefonon is leadhatod a megrendelésedet.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><img src="images/logo.png" alt="" class="foot-logo"><br>© <span id="year"></span> Édes Piros cukrászda · Bemutató weboldal</footer>
+
+<!-- Kosár -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-head"><h3>Kosarad</h3><button class="icon-btn" id="closeCart" aria-label="Bezárás">×</button></div>
+  <div class="drawer-body" id="cartItems"></div>
+  <div class="drawer-foot">
+    <div class="total-row"><span>Összesen</span><strong id="cartTotal">0 Ft</strong></div>
+    <button class="btn full" id="checkoutBtn">Tovább a megrendeléshez</button>
+  </div>
+</aside>
+
+<!-- Megrendelés -->
+<div class="modal" id="checkout" aria-hidden="true">
+  <div class="modal-box">
+    <button class="icon-btn modal-close" data-close aria-label="Bezárás">×</button>
+    <div id="checkoutView">
+      <h3>Megrendelés</h3>
+      <p class="notice">Teszt rendelés – nem történik valódi fizetés. Az elkészítési idő 3 nap, a rendelés személyesen vehető át.</p>
+      <form id="orderForm" novalidate>
+        <div class="row">
+          <label>Név<input name="name" required autocomplete="name"></label>
+          <label>Telefonszám<input name="phone" type="tel" required autocomplete="tel"></label>
+        </div>
+        <label>E-mail<input name="email" type="email" required autocomplete="email"></label>
+        <div class="row">
+          <label>Átvétel napja<input name="date" type="date" id="pickupDate" required></label>
+          <label>Átvétel időpontja<select name="time" id="pickupTime" required></select></label>
+        </div>
+        <p class="hint" id="dateHint"></p>
+
+        <fieldset>
+          <legend>Fizetési mód</legend>
+          <label class="radio"><input type="radio" name="pay" value="card" checked> Bankkártya (teszt)</label>
+          <label class="radio"><input type="radio" name="pay" value="transfer"> Előreutalás</label>
+        </fieldset>
+
+        <div id="cardBox" class="paybox">
+          <label>Kártyaszám<input name="cardnum" inputmode="numeric" placeholder="4242 4242 4242 4242" maxlength="19"></label>
+          <div class="row">
+            <label>Lejárat<input name="exp" placeholder="HH/ÉÉ" maxlength="5"></label>
+            <label>CVC<input name="cvc" inputmode="numeric" placeholder="123" maxlength="4"></label>
+          </div>
+          <p class="hint">Teszt mód: bármilyen kitöltött adat elfogadott, semmi nem kerül elküldésre.</p>
+        </div>
+        <div id="transferBox" class="paybox" hidden>
+          <p>A rendelés leadása után megkapod az utalási adatokat. A rendelés az összeg beérkezése után válik véglegessé.</p>
+          <p class="muted">Kedvezményezett: Édes Piros Cukrászda (teszt)<br>Számlaszám: 00000000-00000000-00000000<br>Közlemény: a rendelés azonosítója</p>
+        </div>
+
+        <label>Megjegyzés (pl. allergia, laktózmentes változat)<textarea name="note" rows="2"></textarea></label>
+
+        <div class="total-row"><span>Fizetendő</span><strong id="checkoutTotal"></strong></div>
+        <button class="btn full" type="submit">Rendelés leadása (teszt)</button>
+      </form>
+    </div>
+    <div id="doneView" hidden>
+      <h3>Köszönjük a rendelésed!</h3>
+      <p class="notice">Ez egy teszt rendelés volt.</p>
+      <div id="doneSummary"></div>
+      <button class="btn full" data-close>Vissza az oldalra</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
